@@ -112,11 +112,11 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
     } else if(min && now.getTime() < min.getTime()) {
       date = new Date(min.getTime())
     }
-    if(props.action) {
-      props.action({
-        resize: this.resize
-      })
-    }
+    //if(props.action) {
+    //  props.action({
+    //    resize: this.resize
+    //  })
+    //}
     this.state = {
       mode: 'month',
       selected: props.value,
@@ -127,9 +127,9 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
     }
   }
   componentDidMount() {
-     if(!this.props.action)
-      this.resize()
-     window.addEventListener('resize', this.resize)
+     //if(!this.props.action)
+    //  this.resize()
+     //window.addEventListener('resize', this.resize)
     const {value} = this.props
     if(value) {
       this.setState({
@@ -139,7 +139,7 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
     }
   }
   componentWillUnmount() {
-     window.removeEventListener('resize', this.resize)
+     //window.removeEventListener('resize', this.resize)
   }
   getButtonHeight = () => {
     const view = this.container? this.container.getBoundingClientRect().width:336
