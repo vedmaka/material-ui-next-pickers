@@ -127,9 +127,9 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
     }
   }
   componentDidMount() {
-    if(!this.props.action)
-      this.resize()
-    window.addEventListener('resize', this.resize)
+    // if(!this.props.action)
+    //  this.resize()
+    // window.addEventListener('resize', this.resize)
     const {value} = this.props
     if(value) {
       this.setState({
@@ -139,7 +139,7 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
     }
   }
   componentWillUnmount() {
-    window.removeEventListener('resize', this.resize)
+    // window.removeEventListener('resize', this.resize)
   }
   getButtonHeight = () => {
     const view = this.container? this.container.getBoundingClientRect().width:336
@@ -353,7 +353,7 @@ class Calendar extends React.Component<CalendarProps, CalendarState> {
                         variant='body1'
                         style={{height:buttonHeight - 10, lineHeight:`${buttonHeight - 10}px`}}
                       >{date.getDate()}</Typography>
-                    </IconButton> : 
+                    </IconButton> :
                     <div className={(classes as any).weekDay} style={{height:buttonHeight - 10}} key={'day-' + index}/>
                   )}
                 </div>
